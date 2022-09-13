@@ -11,6 +11,7 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.ReadKey(); //Mantiene abierta la consola (lee la tecla que presionemos)
         }
     }
 }
