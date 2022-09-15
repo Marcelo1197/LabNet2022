@@ -47,6 +47,7 @@
     <Compile Include="Entidades\Omnibus.cs" />
     <Compile Include="Entidades\Taxi.cs" />
     <Compile Include="Entidades\TransportePublico.cs" />
+    <Compile Include="Excepciones\ExInputTipoTransporte.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
