@@ -8,7 +8,7 @@ namespace LabPOOTransporte.Entidades
 {
     internal class Taxi : TransportePublico
     {  
-        public Taxi(int cantPasajeros) : base(cantPasajeros)
+        public Taxi(int cantPasajeros, string patente) : base(cantPasajeros, patente)
         {
 
         }

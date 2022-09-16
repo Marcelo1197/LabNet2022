@@ -8,11 +8,13 @@ namespace LabPOOTransporte.Entidades
 {
     public abstract class TransportePublico
     {
+        public string Patente { get; set; } = string.Empty;
         public int CantPasajeros { get; set; } = 0;
 
-        public TransportePublico(int cantPasajeros)
+        public TransportePublico(int cantPasajeros, string PatenteId)
         {
             CantPasajeros = cantPasajeros;
+            Patente = PatenteId;
         }
 
         public abstract void Avanzar();

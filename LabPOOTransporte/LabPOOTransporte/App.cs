@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 using LabPOOTransporte.Entidades;
 using LabPOOTransporte.Excepciones;
+using LabPOOTransporte.Servicios;
 
 namespace LabPOOTransporte
 {
     public class App
     {
         private const int Taxi = 1;
+        private const int MaxPasajerosTaxi = 4;
         private const int Omnibus = 2;
-        private const int MaximoPasajeros = 5;
+        private const int MaxPasajerosOmnibus = 100;
 
         private List<TransportePublico> TransportesPublicos = new List<TransportePublico>();
 
@@ -26,21 +28,21 @@ namespace LabPOOTransporte
             {
                 Console.WriteLine("Ingrese un número: 1 o 2, según qué tipo de transporte llenar primero:\n01- Taxi\n02- Ómnibus");
                 int transporteElegido = Convert.ToInt16(Console.ReadLine());
-                if (DatoEntradaValido(transporteElegido) is false)
+                if (TransporteElegidoValido(transporteElegido) is false)
                 {
                     throw new ExInputTipoTransporte();
                 }
                 if (transporteElegido == Taxi)
                 {
-                    LlenarColeccionTransporte(Taxi);
+                    LlenarColeccionConTaxis();
                     Console.WriteLine("\nA continuación llene los ÓMNIBUS con pasajeros.");
-                    LlenarColeccionTransporte(Omnibus);
+                    LlenarColeccionConOmnibus();
                 }
                 if (transporteElegido == Omnibus)
                 {
-                    LlenarColeccionTransporte(Omnibus);
+                    LlenarColeccionConOmnibus();
                     Console.WriteLine("\nA continuación llene los TAXIS con pasajeros.");
-                    LlenarColeccionTransporte(Taxi);
+                    LlenarColeccionConTaxis();
                 }
                 MostrarColeccionTransporte();
             }
@@ -53,30 +55,68 @@ namespace LabPOOTransporte
                 Console.WriteLine(ex.Message);
             }
         }
-
-        private void LlenarColeccionTransporte(int TipoTransporte)
+        private void LlenarColeccionConTaxis()
         {
-            if (TipoTransporte == 1)
+            int cantPasajerosTaxi;
+            int i = 0;
+
+            while (i < 5)
             {
-                int cantPasajerosTaxi = 0;
-                for (int i = 0; i < MaximoPasajeros; i++)
+                Console.WriteLine($"Ingrese la cantidad de pasajeros para el Taxi N{i + 1}:");
+                try
                 {
-                    Console.WriteLine($"Ingrese la cantidad de pasajeros para el Taxi N{i + 1}:");
-                    cantPasajerosTaxi = Convert.ToInt16(Console.ReadLine());
-                    TransportesPublicos.Add(new Taxi(cantPasajerosTaxi));
+                    cantPasajerosTaxi = Convert.ToInt32(Console.ReadLine());
+                    if (CantPasajerosValida(cantPasajerosTaxi, Taxi))
+                    {
+                        TransportesPublicos.Add(new Taxi(cantPasajerosTaxi, ApiPatente.GenerarPatenteRandom()));
+                        i++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("No pueden ir más de 4 pasajeros en un Taxi. Intenta de nuevo.");
+                    }
+                }
+                catch(FormatException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
 
             }
+        }
+        private void LlenarColeccionConOmnibus()
+        {
+            int cantPasajerosOmnibus;
+            int i = 0;
 
-            if (TipoTransporte == 2)
+            while (i < 5)
             {
-                int cantPasajerosOmnibus = 0;
-                for (int i = 0; i < MaximoPasajeros; i++)
+                Console.WriteLine($"Ingrese la cantidad de pasajeros para el Omnibus N{i + 1}:");
+                try
                 {
-                    Console.WriteLine($"Ingrese la cantidad de pasajeros para el Omnibus N{i + 1}:");
                     cantPasajerosOmnibus = Convert.ToInt16(Console.ReadLine());
-                    TransportesPublicos.Add(new Omnibus(cantPasajerosOmnibus));
+                    if (CantPasajerosValida(cantPasajerosOmnibus, Omnibus))
+                    {
+                        TransportesPublicos.Add(new Omnibus(cantPasajerosOmnibus, ApiPatente.GenerarPatenteRandom()));
+                        i++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("No pueden ir más de 100 pasajeros en un Omnibus. Intenta de nuevo.");
+                    }
                 }
+                catch (ExInputTipoTransporte ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
             }
         }
 
@@ -85,13 +125,26 @@ namespace LabPOOTransporte
             Console.WriteLine("\n\nLista de Taxis y Omnibus con su número de pasajeros por vehículo:\n");
             foreach (TransportePublico transporte in TransportesPublicos)
             {
-                Console.WriteLine($"{transporte.GetType().Name}: {transporte.CantPasajeros}");
+                Console.WriteLine($"{transporte.GetType().Name} [{transporte.Patente}]: {transporte.CantPasajeros}");
             }
         }
 
-        private bool DatoEntradaValido(int input)
+        // Validaciones Input
+        private bool TransporteElegidoValido(int input)
         {
             return (input != 1 && input != 2) ? false : true;
+        }
+
+        private bool CantPasajerosValida(int inputPasajeros, int tipoTransporte)
+        {
+            if (tipoTransporte == Taxi)
+            {
+                return (inputPasajeros <= MaxPasajerosTaxi) ? true : false;
+            }
+            else
+            {
+                return (inputPasajeros <= MaxPasajerosOmnibus) ? true : false;
+            }
         }
 
 

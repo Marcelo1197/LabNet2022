@@ -8,7 +8,7 @@ namespace LabPOOTransporte.Entidades
 {
     public class Omnibus : TransportePublico
     {
-        public Omnibus(int cantPasajeros) : base(cantPasajeros)
+        public Omnibus(int cantPasajeros, string patente) : base(cantPasajeros, patente)
         {
 
         }
