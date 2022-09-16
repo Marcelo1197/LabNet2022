@@ -97,7 +97,7 @@ namespace LabPOOTransporte
                 Console.WriteLine($"Ingrese la cantidad de pasajeros para el Omnibus N{i + 1}:");
                 try
                 {
-                    cantPasajerosOmnibus = Convert.ToInt16(Console.ReadLine());
+                    cantPasajerosOmnibus = Convert.ToInt32(Console.ReadLine());
                     if (CantPasajerosValida(cantPasajerosOmnibus, Omnibus))
                     {
                         TransportesPublicos.Add(new Omnibus(cantPasajerosOmnibus, ApiPatente.GenerarPatenteRandom()));
@@ -130,12 +130,12 @@ namespace LabPOOTransporte
         }
 
         // Validaciones Input
-        private bool TransporteElegidoValido(int input)
+        public bool TransporteElegidoValido(int input)
         {
             return (input != 1 && input != 2) ? false : true;
         }
 
-        private bool CantPasajerosValida(int inputPasajeros, int tipoTransporte)
+        public bool CantPasajerosValida(int inputPasajeros, int tipoTransporte)
         {
             if (tipoTransporte == Taxi)
             {
