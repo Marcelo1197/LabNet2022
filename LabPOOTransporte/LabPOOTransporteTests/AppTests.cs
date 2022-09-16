@@ -59,7 +59,7 @@ namespace LabPOOTransporte.Tests
         }
 
         [TestMethod()]
-        public void CantPasajerosTaxiValidaTest()
+        public void CantPasajerosValidaTaxiTest()
         {
             // arrange
             int tipoTransporte = 1;
@@ -76,7 +76,7 @@ namespace LabPOOTransporte.Tests
         }
 
         [TestMethod()]
-        public void CantPasajerosValidaFallaTest()
+        public void CantPasajerosValidaTaxiFallaTest()
         {
             // arrange
             int tipoTransporte = 1;
