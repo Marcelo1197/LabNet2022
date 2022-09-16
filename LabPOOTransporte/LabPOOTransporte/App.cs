@@ -19,40 +19,45 @@ namespace LabPOOTransporte
 
         private List<TransportePublico> TransportesPublicos = new List<TransportePublico>();
 
+        private bool continuarEjecutando = true;
         public void Ejecutar()
         {
             Console.WriteLine("\t##### App TAXIS & Omnibus #####");
             Console.WriteLine("\t¿Qué hace?\n\tLlena 5 taxis con pasajeros y 5 ómnibus con pasajeros y los muestra en una lista.\n\n");
 
-            try
+            while (continuarEjecutando)
             {
-                Console.WriteLine("Ingrese un número: 1 o 2, según qué tipo de transporte llenar primero:\n01- Taxi\n02- Ómnibus");
-                int transporteElegido = Convert.ToInt16(Console.ReadLine());
-                if (TransporteElegidoValido(transporteElegido) is false)
+                try
                 {
-                    throw new ExInputTipoTransporte();
+                    Console.WriteLine("Ingrese un número: 1 o 2, según qué tipo de transporte llenar primero:\n01- Taxi\n02- Ómnibus");
+                    int transporteElegido = Convert.ToInt16(Console.ReadLine());
+                    if (TransporteElegidoValido(transporteElegido) is false)
+                    {
+                        throw new ExInputTipoTransporte();
+                    }
+                    if (transporteElegido == Taxi)
+                    {
+                        LlenarColeccionConTaxis();
+                        Console.WriteLine("\nA continuación llene los ÓMNIBUS con pasajeros.");
+                        LlenarColeccionConOmnibus();
+                    }
+                    if (transporteElegido == Omnibus)
+                    {
+                        LlenarColeccionConOmnibus();
+                        Console.WriteLine("\nA continuación llene los TAXIS con pasajeros.");
+                        LlenarColeccionConTaxis();
+                    }
+                    MostrarColeccionTransporte();
+                    continuarEjecutando = false;
                 }
-                if (transporteElegido == Taxi)
+                catch(ExInputTipoTransporte ex)
                 {
-                    LlenarColeccionConTaxis();
-                    Console.WriteLine("\nA continuación llene los ÓMNIBUS con pasajeros.");
-                    LlenarColeccionConOmnibus();
+                    Console.WriteLine(ex.Message);
                 }
-                if (transporteElegido == Omnibus)
+                catch(Exception ex)
                 {
-                    LlenarColeccionConOmnibus();
-                    Console.WriteLine("\nA continuación llene los TAXIS con pasajeros.");
-                    LlenarColeccionConTaxis();
+                    Console.WriteLine(ex.Message);
                 }
-                MostrarColeccionTransporte();
-            }
-            catch(ExInputTipoTransporte ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
         }
         private void LlenarColeccionConTaxis()
