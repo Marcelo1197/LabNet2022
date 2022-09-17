@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtExcepUT", "ExtExcepUT\ExtExcepUT.csproj", "{DED31022-8259-40D5-A996-7A8A50CDE6A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DED31022-8259-40D5-A996-7A8A50CDE6A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED31022-8259-40D5-A996-7A8A50CDE6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED31022-8259-40D5-A996-7A8A50CDE6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED31022-8259-40D5-A996-7A8A50CDE6A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6D37E8D-9596-4068-9497-250F390F915B}
+	EndGlobalSection
+EndGlobal
