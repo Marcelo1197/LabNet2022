@@ -5,8 +5,6 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtExcepUT", "ExtExcepUT\ExtExcepUT.csproj", "{DED31022-8259-40D5-A996-7A8A50CDE6A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtExcepUTTests1", "ExtExcepUTTests1\ExtExcepUTTests1.csproj", "{9C484D8D-FB7C-4FFD-9A7C-86C5B1C5AAEE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{DED31022-8259-40D5-A996-7A8A50CDE6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DED31022-8259-40D5-A996-7A8A50CDE6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DED31022-8259-40D5-A996-7A8A50CDE6A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C484D8D-FB7C-4FFD-9A7C-86C5B1C5AAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C484D8D-FB7C-4FFD-9A7C-86C5B1C5AAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C484D8D-FB7C-4FFD-9A7C-86C5B1C5AAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C484D8D-FB7C-4FFD-9A7C-86C5B1C5AAEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
