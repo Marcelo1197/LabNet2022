@@ -18,7 +18,7 @@ namespace ExtExcepUT.Front
     {
         private int ejercicioElegido;
         private string[] Ejercicios = new string[] { "Ejercicio 1", "Ejercicio 2", "Ejercicio 3", "Ejercicio 4", "SALIR"};
-        private string introduccion = "Aplicación que resuelve los 4 ejercicios aplicando los siguientes conceptos:\nExtension Methods, Exceptions y Unit Test.";
+        private string introduccion = "Aplicación que resuelve los 4 ejercicios aplicando los siguientes conceptos:\nExtension Methods y Exceptions.";
         private string instrucciones = "Elija el Ejercicio que quiera ver (muevase con las Flechitas y presione Enter)";
 
         public void Ejecutar()
