@@ -71,6 +71,10 @@ namespace LabPOOTransporte
                 try
                 {
                     cantPasajerosTaxi = Convert.ToInt32(Console.ReadLine());
+                    if (cantPasajerosTaxi <= 0)
+                    {
+                        Console.WriteLine("Ingresó un numero negativo o 0. Mínimo debe ingresar 1 pasajero.");
+                    }
                     if (CantPasajerosValida(cantPasajerosTaxi, Taxi))
                     {
                         TransportesPublicos.Add(new Taxi(cantPasajerosTaxi, ApiPatente.GenerarPatenteRandom()));
@@ -103,6 +107,10 @@ namespace LabPOOTransporte
                 try
                 {
                     cantPasajerosOmnibus = Convert.ToInt32(Console.ReadLine());
+                    if (cantPasajerosOmnibus <= 0)
+                    {
+                        Console.WriteLine("Ingresó un numero negativo o 0. Mínimo debe ingresar 1 pasajero.");
+                    }
                     if (CantPasajerosValida(cantPasajerosOmnibus, Omnibus))
                     {
                         TransportesPublicos.Add(new Omnibus(cantPasajerosOmnibus, ApiPatente.GenerarPatenteRandom()));
