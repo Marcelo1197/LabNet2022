@@ -46,23 +46,22 @@ namespace ExtExcepUT.Front
 
                 if (ejercicioElegido != 4)
                 {
-                    try
+                    do
                     {
-                        Console.WriteLine("¿Continuar con otros ejercicios o salir?\n01-CONTINUAR\n02-SALIR");
-                        ejercicioElegido = (Convert.ToInt32(Console.ReadLine()) == 1) ? Opcion.Continuar : Opcion.Salir;
-                    }
-                    catch (FormatException ex)
-                    {
-                        Console.WriteLine("No ingresaste nada o ingresaste una letra. Solo ingresa los enteros 1 o 2");
-                        Console.WriteLine("¿Continuar con otros ejercicios o salir?\n01-CONTINUAR\n02-SALIR");
-                        ejercicioElegido = (Convert.ToInt32(Console.ReadLine()) == 1) ? Opcion.Continuar : Opcion.Salir;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("No ingresaste nada o ingresaste una letra. Solo ingresa los enteros 1 o 2");
-                        Console.WriteLine("¿Continuar con otros ejercicios o salir?\n01-CONTINUAR\n02-SALIR");
-                        ejercicioElegido = (Convert.ToInt32(Console.ReadLine()) == 1) ? Opcion.Continuar : Opcion.Salir;
-                    }
+                        try
+                        {
+                            Console.WriteLine("¿Continuar con otros ejercicios o salir?\n01-CONTINUAR\n02-SALIR");
+                            ejercicioElegido = (Convert.ToInt32(Console.ReadLine()) == 1) ? Opcion.Continuar : Opcion.Salir;
+                        }
+                        catch (FormatException ex)
+                        {
+                            Console.WriteLine("No ingresaste nada o ingresaste una letra. Solo ingresa los enteros 1 o 2");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("No ingresaste nada o ingresaste una letra. Solo ingresa los enteros 1 o 2");
+                        }
+                    } while (ejercicioElegido != Opcion.Continuar && ejercicioElegido != Opcion.Salir);
                 }
             } while (ejercicioElegido != 4);
             Console.WriteLine("\n\nFIN DEL PROGRAMA");
