@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.Logic", "Cr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.Common", "Crud.NorthW.App.Common\Crud.NorthW.App.Common.csproj", "{FDC18C19-0FF8-474C-89A5-82625736D335}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.Repository", "Crud.NorthW.App.Repository\Crud.NorthW.App.Repository.csproj", "{3E5B4A8B-906E-454E-BD69-9D166C99FF79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationInputTests", "ValidationInputTests\ValidationInputTests.csproj", "{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{FDC18C19-0FF8-474C-89A5-82625736D335}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDC18C19-0FF8-474C-89A5-82625736D335}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDC18C19-0FF8-474C-89A5-82625736D335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E5B4A8B-906E-454E-BD69-9D166C99FF79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E5B4A8B-906E-454E-BD69-9D166C99FF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E5B4A8B-906E-454E-BD69-9D166C99FF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E5B4A8B-906E-454E-BD69-9D166C99FF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

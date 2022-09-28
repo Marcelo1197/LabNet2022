@@ -48,6 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\InvalidIdException.cs" />
+    <Compile Include="Exceptions\InvalidOptionException.cs" />
+    <Compile Include="Exceptions\InvalidPhoneException.cs" />
+    <Compile Include="Exceptions\InvalidStringException.cs" />
+    <Compile Include="Exceptions\OutOfRangeStringException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0B201056-7D60-441F-8463-A77454030AC2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Crud.NorthW.App.UI</RootNamespace>
-    <AssemblyName>Crud.NorthW.App.UI</AssemblyName>
+    <ProjectGuid>{3E5B4A8B-906E-454E-BD69-9D166C99FF79}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crud.NorthW.App.Repository</RootNamespace>
+    <AssemblyName>Crud.NorthW.App.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -50,28 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="CustomerRepository.cs" />
+    <Compile Include="ICustomerRepository.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IShippersRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="ShippersRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Crud.NorthW.App.Common\Crud.NorthW.App.Common.csproj">
-      <Project>{fdc18c19-0ff8-474c-89a5-82625736d335}</Project>
-      <Name>Crud.NorthW.App.Common</Name>
+    <ProjectReference Include="..\Crud.NorthW.App.Data\Crud.NorthW.App.Data.csproj">
+      <Project>{677c0370-77b7-457f-aa2a-2d9df28b6b6a}</Project>
+      <Name>Crud.NorthW.App.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Crud.NorthW.App.Entities\Crud.NorthW.App.Entities.csproj">
       <Project>{c1dbf798-12a9-477a-b94c-ff700fecc56b}</Project>
       <Name>Crud.NorthW.App.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Crud.NorthW.App.Logic\Crud.NorthW.App.Logic.csproj">
-      <Project>{fc2fc0cf-61c6-4eca-8d14-2176027de4a1}</Project>
-      <Name>Crud.NorthW.App.Logic</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

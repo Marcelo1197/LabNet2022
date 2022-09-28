@@ -1,10 +1,10 @@
-﻿using Crud.NorthW.App.Entities;
-using Crud.NorthW.App.Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Crud.NorthW.App.Entities;
+using Crud.NorthW.App.Logic;
 
 namespace Crud.NorthW.App.UI
 {
@@ -12,14 +12,8 @@ namespace Crud.NorthW.App.UI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Mostramos lista de Customers");
-            CustomerLogic cl = new CustomerLogic();
-            List<Customers> customersList = cl.GetAll();
-
-            foreach (var customer in customersList)
-            {
-                Console.WriteLine($"\nID: {customer.CustomerID}\nCompañia: {customer.CompanyName}\nNombre de contacto:{customer.ContactName}\n");
-            }
+            var app = new App();
+            app.Run();
             Console.ReadKey();
         }
     }
