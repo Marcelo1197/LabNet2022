@@ -60,9 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
+    <ProjectReference Include="..\Common\Linq.Queries.Common.csproj">
       <Project>{37C5FC5B-C1A1-43AC-B6A6-AC66FAD25BF5}</Project>
-      <Name>Common</Name>
+      <Name>Linq.Queries.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Linq.Queries.Data\Linq.Queries.Data.csproj">
       <Project>{62933EFB-B0BA-42BB-A278-1E258D068291}</Project>

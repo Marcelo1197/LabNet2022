@@ -12,6 +12,8 @@ namespace Linq.Queries.Dto
 
         public string CompanyName { get; set; }
 
+        public string Region { get; set; }
+
         public int RelatedOrders { get; set; }
 
         public DateTime? OrderDate { get; set; }

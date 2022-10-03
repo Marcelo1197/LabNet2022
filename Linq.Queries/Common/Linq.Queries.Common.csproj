@@ -7,8 +7,8 @@
     <ProjectGuid>{37C5FC5B-C1A1-43AC-B6A6-AC66FAD25BF5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common</RootNamespace>
-    <AssemblyName>Common</AssemblyName>
+    <RootNamespace>Linq.Queries.Common</RootNamespace>
+    <AssemblyName>Linq.Queries.Common</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

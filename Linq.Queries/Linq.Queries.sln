@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq.Queries.Entities", "Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq.Queries.Logic", "Linq.Queries.Logic\Linq.Queries.Logic.csproj", "{0A8601BB-4679-4E14-9C74-15D2E238E582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{37C5FC5B-C1A1-43AC-B6A6-AC66FAD25BF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq.Queries.Common", "Common\Linq.Queries.Common.csproj", "{37C5FC5B-C1A1-43AC-B6A6-AC66FAD25BF5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq.Queries.Dto", "Linq.Queries.Dto\Linq.Queries.Dto.csproj", "{31FF73B0-98B7-4DF2-8F54-0636E0A03205}"
 EndProject

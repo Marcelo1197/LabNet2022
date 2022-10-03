@@ -94,24 +94,27 @@ namespace Linq.Queries.UI
 
                 if (opcionElegida != salir)
                 {
-                    try
+                    do
                     {
-                        Console.WriteLine("\n¿Continuar con otras operaciones o salir?\n\t01-CONTINUAR\t13-SALIR");
-                        opcionElegida = Convert.ToInt32(Console.ReadLine());
-                        opcionElegida.ValidateOption();
-                    }
-                    catch (InvalidOptionMenuException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    catch (FormatException ex)
-                    {
-                        Console.WriteLine("No ingresaste nada o ingresaste una letra. Solo ingresa los enteros 1 o 2");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
+                        try
+                        {
+                            Console.WriteLine("\n¿Continuar con otras operaciones o salir?\n\t01-CONTINUAR\t13-SALIR");
+                            opcionElegida = Convert.ToInt32(Console.ReadLine());
+                            opcionElegida.ValidateOption();
+                        }
+                        catch (InvalidOptionMenuException ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                        catch (FormatException ex)
+                        {
+                            Console.WriteLine("No ingresaste nada o ingresaste una letra. Solo ingresa los enteros 1 o 2");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                    } while (opcionElegida != salir && opcionElegida != continuar);
                 }
             } while (opcionElegida != salir);
 
@@ -177,7 +180,7 @@ namespace Linq.Queries.UI
 
             foreach (var c in customers)
             {
-                Console.WriteLine($"ID #{c.CustomerID} - {c.CompanyName} - Fecha de Orden: {c.OrderDate}");
+                Console.WriteLine($"ID #{c.CustomerID} - {c.CompanyName} - REGION: {c.Region}  - Fecha de Orden: {c.OrderDate}");
             }
         }
 
@@ -234,33 +237,8 @@ namespace Linq.Queries.UI
 
             foreach (var c in customers)
             {
-                Console.WriteLine($"ID Customer: {c.CustomerID} - {c.RelatedOrders}");
+                Console.WriteLine($"ID Customer: {c.CustomerID} - Cantidad de Ordenes: {c.RelatedOrders}");
             }
         }
     }
 }
-/*
-   switch (opcionElegida)
-   {
-       case OpcionMenu.Query1:
-           imprimirResultadoQuery1();
-           break;
-       case OpcionMenu.Query2:
-           break;
-       case OpcionMenu.Query3:
-           break;
-       case OpcionMenu.Query4:
-           break;
-       case OpcionMenu.Query5:
-           break;
-       case OpcionMenu.Query6:
-           break;
-       case OpcionMenu.Query7:
-           break;
-       case OpcionMenu.Query8:
-           break;
-       default:
-           continuarOcerrarApp();
-           break;
-   }
-   */

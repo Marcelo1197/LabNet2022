@@ -14,10 +14,7 @@ namespace Common.Extensions
             int continuarPrograma = 1;
             int salir = 5;
 
-            if (input != continuarPrograma && input != salir)
-            {
-                throw new InvalidOptionMenuException();
-            }
+            if (input != continuarPrograma && input != salir) throw new InvalidOptionMenuException();
         }
     }
 }

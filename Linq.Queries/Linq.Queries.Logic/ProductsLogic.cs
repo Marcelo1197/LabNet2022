@@ -24,7 +24,7 @@ namespace Linq.Queries.Logic
         public IQueryable<ProductsDto> queryProdFiltradosPrecioStock() // Query #3
         {
             return _context.Products
-                .Where(p => p.UnitsInStock == 0 && p.UnitPrice > 3)
+                .Where(p => p.UnitsInStock > 0 && p.UnitPrice > 3)
                 .Select(p => new ProductsDto
                 {
                     ProductID = p.ProductID,

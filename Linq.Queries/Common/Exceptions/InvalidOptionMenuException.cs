@@ -8,10 +8,6 @@ namespace Common.Exceptions
 {
     public class InvalidOptionMenuException : Exception
     {
-        public InvalidOptionMenuException() : base("Ingresaste un valor distinto a 1 o 5. Solo se admiten los enteros 1 (uno) o 5 (cinco).")
-        {
-
-        }
-
+        public InvalidOptionMenuException() : base("Ingresaste un valor distinto a 1 o 13. Solo se admiten los enteros 1 (uno) o 13 (trece).") { }
     }
 }

@@ -37,7 +37,7 @@ namespace Linq.Queries.Logic
             return _context.Customers
                 .Select(c => new CustomerDTO
                 {
-                    CompanyName = c.CompanyName
+                    CompanyName = c.ContactName
                 });
         }
 
@@ -48,11 +48,12 @@ namespace Linq.Queries.Logic
                    join c in _context.Customers
                    on new { o.CustomerID }
                    equals new { c.CustomerID }
-                   where o.OrderDate > fechaMinimaOrder
+                   where o.OrderDate > fechaMinimaOrder && c.Region == "WA"
                    select new CustomerWithOrdersDto
                    {
                        CustomerID = c.CustomerID,
                        CompanyName = c.CompanyName,
+                       Region = c.Region,
                        OrderDate = o.OrderDate
                    };
         }
@@ -65,6 +66,7 @@ namespace Linq.Queries.Logic
                                              {
                                                  CustomerID = c.CustomerID,
                                                  CompanyName = c.CompanyName,
+                                                 Region = c.Region
                                              }).Take(3);
             return queryPrimeros3CustomersWA;
         }
