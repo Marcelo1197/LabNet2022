@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form App</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <section class="form-section-section">
+    <form id="form">
+      <h2 class="form__h2">Información Personal</h2>
+      <div class="form__grupo">
+        <!-- <div id="form__input-nombre-error" class="alert alert-danger" role="alert" hidden></div> -->
+        <label for="form__input-nombre">Nombre</label>
+        <div class="form__grupo-mensajeError"></div>
+        <input id="form__input-nombre" class="form__input" placeholder="Escribí tu nombre" required></input>
+      </div>
+      <div class="form__grupo">
+        <!-- <div id="form__input-apellido-error" class="alert alert-danger" role="alert" hidden></div>-->
+        <label for="form__input-apellido">Apellido</label>
+        <div class="form__grupo-mensajeError"></div>
+        <input id="form__input-apellido" class="form__input" placeholder="Escribí tu apellido" required></input>
+      </div>
+      <div class="form__grupo">
+        <!-- <div id="form__input-edad-error" class=" alert alert-danger" role="alert" hidden></div>-->
+        <label for="form__input-edad">Edad</label>
+        <div class="form__grupo-mensajeError"></div>
+        <input id="form__input-edad" class="form__input" type="number" style="width: 60px;" required></input>
+      </div>
+      <div class="form__grupo">
+        <label for="form__input-masculino">Masculino</label>
+        <input type="radio" id="form__input-masculino" name="fav_language" value="Masculino" required>
+        <label for="css">Femenino</label>
+        <input type="radio" id="form__input-femenino" name="fav_language" value="Femenino" required>
+        <label for="form__input-otro">Otro</label>
+        <input type="radio" id="form__input-otro" name="fav_language" value="Otro" required>
+      </div> 
+        <button class="form__button" type="submit">Enviar</button>
+        <input id="btnlimpiar" type="button" class="form__button-limpiar" value="Limpiar"></input>
+    </form>
+  </section>
+  <script src="/assets/main.js"></script>
+
+</body>
+</html>
