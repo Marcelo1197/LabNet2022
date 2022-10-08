@@ -18,7 +18,7 @@ namespace Crud.NorthW.App.MVC.Models
         [DisplayName("Nombre")]
         public string CompanyName { get; set; }
 
-        [RegularExpression(@"^[0-9]", ErrorMessage = "Ingrese solo números por favor.")]
+        [RegularExpression(@"\d*", ErrorMessage = "Ingrese solo números por favor.")]
         [StringLength(24, ErrorMessage = "Ingrese máximo 24 números por favor")]
         [DisplayName("Teléfono")]
         public string Phone { get; set; }

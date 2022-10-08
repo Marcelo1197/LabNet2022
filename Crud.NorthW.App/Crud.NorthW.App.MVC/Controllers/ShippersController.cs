@@ -21,6 +21,7 @@ namespace Crud.NorthW.App.MVC.Controllers
             {
                 ShipperID = s.ShipperID,
                 CompanyName = s.CompanyName,
+                Phone = s.Phone,
             });
             if (TempData["ShipperAddedSuccessfully"] != null)
             {
@@ -79,6 +80,7 @@ namespace Crud.NorthW.App.MVC.Controllers
             {
                 var shipperUpdated = _logic.Get(shipperWithNewData.ShipperID);
                 shipperUpdated.CompanyName = shipperWithNewData.CompanyName;
+                shipperUpdated.Phone = shipperWithNewData.Phone;
                 _logic.Update(shipperUpdated);
                 TempData["ShipperUpdatedSuccessfully"] = $"El Shipper #{shipperUpdated.ShipperID} se actualizó con éxito!";
                 return RedirectToAction("Index");
