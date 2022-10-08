@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.UI", "Crud.NorthW.App.UI\Crud.NorthW.App.UI.csproj", "{0B201056-7D60-441F-8463-A77454030AC2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.Entities", "Crud.NorthW.App.Entities\Crud.NorthW.App.Entities.csproj", "{C1DBF798-12A9-477A-B94C-FF700FECC56B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.Data", "Crud.NorthW.App.Data\Crud.NorthW.App.Data.csproj", "{677C0370-77B7-457F-AA2A-2D9DF28B6B6A}"
@@ -17,16 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.Repository"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationInputTests", "ValidationInputTests\ValidationInputTests.csproj", "{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.MVC", "Crud.NorthW.App.MVC\Crud.NorthW.App.MVC.csproj", "{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B201056-7D60-441F-8463-A77454030AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B201056-7D60-441F-8463-A77454030AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B201056-7D60-441F-8463-A77454030AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B201056-7D60-441F-8463-A77454030AC2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C1DBF798-12A9-477A-B94C-FF700FECC56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C1DBF798-12A9-477A-B94C-FF700FECC56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1DBF798-12A9-477A-B94C-FF700FECC56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A6C67CE-7EBB-4F3E-9BF4-47B4A9D05305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

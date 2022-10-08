@@ -1,0 +1,40 @@
+﻿@model Crud.NorthW.App.MVC.Models.ShippersView
+@{
+    ViewBag.Title = "_UpdatePartialView";
+}
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=@($"#updateModalShipper{Model.ShipperID}")>
+    Editar
+</button>
+<!-- Update Modal -->
+<div class="modal fade" id=@($"updateModalShipper{Model.ShipperID}") data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-black" id="staticBackdropLabel">Actualizar Shipper</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Update Form  -->
+                @using (@Html.BeginForm("Update", "Shippers", FormMethod.Post))
+                {
+                    @Html.LabelFor(shipper => shipper.CompanyName, new { @class = "form-label text-dark" })
+                    @Html.TextBoxFor(shipper => shipper.CompanyName, new { @class = "form-control" })
+                    <input hidden value=@Model.ShipperID id="ShipperID" name="ShipperID" />
+                    @Html.ValidationMessageFor(shipper => shipper.CompanyName, null, new { @class = "text-danger" })
+                    <br />
+                    @Html.LabelFor(shipper => shipper.Phone, new { @class = "form-label text-dark" })
+                    @Html.TextBoxFor(shipper => shipper.Phone, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(shipper => shipper.Phone, null, new { @class = "text-danger" })
+                    <br />
+                    <button class="btn btn-primary mt-2">Guardar</button>
+                }
+                <!-- End Form -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
