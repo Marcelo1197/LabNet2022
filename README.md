@@ -14,6 +14,6 @@
 - Limpiar la solución antes de ejecutar (Click derecho y elegir **Clean** )
 - Correr el proyecto con F5 o clickeando el botón **IIS Express** en la Toolbar
 
-### Ejecutar MVC de SWAPPI
-- Click derecho sobre el proyecto **Crud.NorthW.App.SWApi.MVC** y elegir **Set as Startup Project**
+### Ejecutar WebAPI
+- Click derecho sobre el proyecto **Crud.NorthW.App.WebAPI** y elegir **Set as Startup Project**
 - Correr el proyecto con F5 o clickeando el botón **IIS Express** en la Toolbar
