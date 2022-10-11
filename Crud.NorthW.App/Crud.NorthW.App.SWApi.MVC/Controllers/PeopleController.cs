@@ -13,9 +13,9 @@ namespace Crud.NorthW.App.SWApi.MVC.Controllers
     public class PeopleController : Controller
     {
         // GET: People
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string NextOrPreviousURL)
         {
-            var url = "https://swapi.dev/api/people";
+            var url = (NextOrPreviousURL == null) ? "https://swapi.dev/api/people" : NextOrPreviousURL;
             var httpClient = new HttpClient();
             var jsonPeopleResponse = await httpClient.GetStringAsync(url);
             PeopleListView peopleViewList = JsonConvert.DeserializeObject<PeopleListView>(jsonPeopleResponse);
@@ -33,27 +33,18 @@ namespace Crud.NorthW.App.SWApi.MVC.Controllers
             return View(peopleView);
         }
 
-        [HttpGet]
-        public async Task<ActionResult> NextPage(string nextPageUrl)
+        [HttpPost]
+        public ActionResult NextPage()
         {
-            var url = nextPageUrl;
-            var httpClient = new HttpClient();
-            var jsonPeopleResponse = await httpClient.GetStringAsync(url);
-            PeopleListView peopleViewList = JsonConvert.DeserializeObject<PeopleListView>(jsonPeopleResponse);
-            ViewBag.NextPage = peopleViewList.next;
-            ViewBag.PreviousPage = peopleViewList.previous;
-            return View(peopleViewList.results);
+            var nextPageUrl = HttpContext.Request.Form["nextPageUrl"];
+            return RedirectToAction("Index", new { NextOrPreviousURL = nextPageUrl });
         }
 
         [HttpPost]
-        public void PaginaSig(string nextPageUrl)
+        public ActionResult PreviousPage()
         {
-            var url = nextPageUrl;
-        }
-
-        public ActionResult PreviousPage(string previousPageUrl)
-        {
-            return RedirectToAction("Index", new { url = previousPageUrl });
+            var previousPageUrl = HttpContext.Request.Form["previousPageUrl"];
+            return RedirectToAction("Index", new { NextOrPreviousURL = previousPageUrl });
         }
 
 

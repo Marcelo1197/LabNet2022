@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #000000;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -25,6 +26,11 @@ textarea {
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-    background-color: #777;
+    background-color: #F0A500;
     border-color: #fff
+}
+
+.navbar {
+    background-color: #F0A500;
+    border-radius: 5px;
 }

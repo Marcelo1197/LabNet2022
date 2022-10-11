@@ -53,7 +53,7 @@
     <Compile Include="Exceptions\InvalidPhoneException.cs" />
     <Compile Include="Exceptions\InvalidStringException.cs" />
     <Compile Include="Exceptions\OutOfRangeStringException.cs" />
-    <Compile Include="Exceptions\ShipperNotExistsException.cs" />
+    <Compile Include="Exceptions\WebApiExceptions\ShipperNotExistsException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

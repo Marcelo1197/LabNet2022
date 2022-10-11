@@ -4,6 +4,7 @@ using Crud.NorthW.App.Logic;
 using Crud.NorthW.App.WebAPI.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -41,8 +42,10 @@ namespace Crud.NorthW.App.WebAPI.Controllers
             try
             {
                 var shipperFinded = _logic.Get(id);
-                if (shipperFinded == null) throw new ShipperNotExistsException();
-
+                if (shipperFinded == null)
+                {
+                    throw new ShipperNotExistsException();
+                }
                 var shipperFindedView = new ShippersResponse
                 {
                     ShipperID = shipperFinded.ShipperID,
@@ -61,7 +64,7 @@ namespace Crud.NorthW.App.WebAPI.Controllers
             }
         }
 
-        // POST: api/Shipper
+        // POST: api/Shippers
         public IHttpActionResult AddShipper([FromBody] ShippersRequest shipper)
         {
             try
@@ -87,8 +90,10 @@ namespace Crud.NorthW.App.WebAPI.Controllers
             try
             {
                 var shipperUpdated = _logic.Get(shipper.ShipperID);
-                if (shipperUpdated == null) throw new ShipperNotExistsException();
-
+                if (shipperUpdated == null)
+                {
+                    throw new ShipperNotExistsException();
+                }
                 shipperUpdated.CompanyName = shipper.CompanyName;
                 shipperUpdated.Phone = shipper.Phone;
                 _logic.Update(shipperUpdated);
@@ -112,14 +117,21 @@ namespace Crud.NorthW.App.WebAPI.Controllers
             try
             {
                 var shipperDeleted = _logic.Get(id);
-                if (shipperDeleted == null) throw new ShipperNotExistsException();
-
+                if (shipperDeleted == null)
+                {
+                    throw new ShipperNotExistsException();
+                }
                 _logic.Delete(shipperDeleted);
                 return Content(HttpStatusCode.OK, shipperDeleted);
             }
             catch (ShipperNotExistsException ex)
             {
                 return Content(HttpStatusCode.NotFound, new { ErrorMessage = ex.Message});
+            }
+            catch (DbUpdateException ex)
+            {
+                var error = "No es posible eliminar este Shipper. Primero debe eliminar las órdenes relacionadas a el.";
+                return Content(HttpStatusCode.Conflict, new { ErrorMessage = error });
             }
             catch (Exception ex)
             {

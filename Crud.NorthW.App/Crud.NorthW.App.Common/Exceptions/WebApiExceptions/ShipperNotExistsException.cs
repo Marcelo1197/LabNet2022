@@ -8,7 +8,7 @@ namespace Crud.NorthW.App.Common.Exceptions.WebApiExceptions
 {
     public class ShipperNotExistsException : Exception
     {
-        public ShipperNotExistsException() : base("El shipper que solicitó no existe. Intente con otro por favor.")
+        public ShipperNotExistsException() : base("El Shipper que solicitó no existe. Intente con otro por favor.")
         {
 
         }
