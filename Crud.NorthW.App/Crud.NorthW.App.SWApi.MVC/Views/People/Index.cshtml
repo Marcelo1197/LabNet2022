@@ -1,0 +1,48 @@
+﻿@model List<Crud.NorthW.App.SWApi.MVC.Models.PeopleView>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container w-75 mt-3">
+    <h1>Lista de Personajes de Star Wars :D!</h1>
+    <section class="peopleList row">
+        @foreach (var peopleView in Model)
+        {
+            <div class="card border-dark mb-3 mx-2" style="max-width: 14rem;">
+                <div class="card-header">@peopleView.name</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">@peopleView.name</h5>
+                    <p class="card-text">
+                        <ul>
+                            <li>
+                                <strong>Altura:</strong> @peopleView.height
+                            </li>
+                            <li>
+                                <strong>Peso:</strong> @peopleView.mass
+                            </li>
+                            <li>
+                                <strong>Año Nacimiento:</strong> @peopleView.birth_year
+                            </li>
+                            <li>
+                                <strong>Genero:</strong> @peopleView.gender
+                            </li>
+                            <li>
+                                <strong>Planeta:</strong> @peopleView.homeworld
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        }
+    <div class="peopleList__Pagination">
+        @using (@Html.BeginForm("PaginaSig", "People", FormMethod.Post))
+         {
+            @Html.ActionLink("Anterior", "PreviousPage", "People", $"{ViewBag.PreviousPage}", new { @class = "btn btn-primary mx-1" })
+            <input value="@ViewBag.NextPage" hidden/>
+            <button>PagSig</button>
+            @Html.ActionLink("Siguiente", "PaginaSig", "People", new { url = ViewBag.NextPage }, new { @class = "btn btn-primary mx-1" })
+         }
+        <p>@ViewBag.NextPage</p>
+    </div>
+
+    </section>
+</div>

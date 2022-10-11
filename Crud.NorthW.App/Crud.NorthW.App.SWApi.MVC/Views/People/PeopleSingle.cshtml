@@ -1,0 +1,34 @@
+﻿@model Crud.NorthW.App.SWApi.MVC.Models.PeopleView
+@{
+    ViewBag.Title = "Character Info";
+}
+<div class="container w-75 mt-3">
+    <h1>Lista de Personajes de Star Wars :D!</h1>
+    <section class="peopleList">
+        <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">@Model.name</div>
+            <div class="card-body text-dark">
+                <h5 class="card-title">@Model.name</h5>
+                <p class="card-text">
+                    <ul>
+                        <li>
+                            <strong>Altura:</strong> @Model.height
+                        </li>
+                        <li>
+                            <strong>Peso:</strong> @Model.mass
+                        </li>
+                        <li>
+                            <strong>Año Nacimiento:</strong> @Model.birth_year
+                        </li>
+                        <li>
+                            <strong>Genero:</strong> @Model.gender
+                        </li>
+                        <li>
+                            <strong>Planeta:</strong> @Model.homeworld
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </section>
+</div>

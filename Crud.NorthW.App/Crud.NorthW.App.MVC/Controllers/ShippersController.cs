@@ -17,7 +17,7 @@ namespace Crud.NorthW.App.MVC.Controllers
         // GET: Shippers
         public ActionResult Index()
         {
-            var shippers = _logic.GetAll().Select(s => new ShippersView
+            var shippers = _logic.GetAll().Select(s => new Shippers
             {
                 ShipperID = s.ShipperID,
                 CompanyName = s.CompanyName,
@@ -55,11 +55,11 @@ namespace Crud.NorthW.App.MVC.Controllers
 
         // POST: Shippers/Add
         [HttpPost]
-        public ActionResult Add(ShippersView shippersView)
+        public ActionResult Add(Models.ShippersView shippersView)
         {
             try
             {
-                var shippersEntity = new Shippers
+                var shippersEntity = new Entities.Shippers
                 {
                     CompanyName = shippersView.CompanyName,
                 };
@@ -74,7 +74,7 @@ namespace Crud.NorthW.App.MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(ShippersView shipperWithNewData)
+        public ActionResult Update(Models.ShippersView shipperWithNewData)
         {
             try
             {

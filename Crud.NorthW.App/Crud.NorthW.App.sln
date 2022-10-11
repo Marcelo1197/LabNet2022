@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationInputTests", "Val
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.MVC", "Crud.NorthW.App.MVC\Crud.NorthW.App.MVC.csproj", "{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.SWApi.MVC", "Crud.NorthW.App.SWApi.MVC\Crud.NorthW.App.SWApi.MVC.csproj", "{046A4449-05FD-4CA6-82D7-2993C7E42439}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.NorthW.App.WebAPI", "Crud.NorthW.App.WebAPI\Crud.NorthW.App.WebAPI.csproj", "{5EA3FE61-5C26-4980-9975-41B7C3FAD106}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83CB36DC-9D5B-4A6A-99E2-87CDD1E5DE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{046A4449-05FD-4CA6-82D7-2993C7E42439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046A4449-05FD-4CA6-82D7-2993C7E42439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046A4449-05FD-4CA6-82D7-2993C7E42439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{046A4449-05FD-4CA6-82D7-2993C7E42439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA3FE61-5C26-4980-9975-41B7C3FAD106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA3FE61-5C26-4980-9975-41B7C3FAD106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA3FE61-5C26-4980-9975-41B7C3FAD106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA3FE61-5C26-4980-9975-41B7C3FAD106}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
