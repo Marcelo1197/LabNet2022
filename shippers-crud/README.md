@@ -1,27 +1,27 @@
 # ShippersCrud
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+Se utilizó [Angular CLI](https://github.com/angular/angular-cli) en su versión 14.1.0.
 
-## Development server
+## Correr servidor de desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ejecutar `ng serve` y acceder a `http://localhost:4200/`
 
-## Code scaffolding
+## Generar scaffolding 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecutar: `ng generate component component-name` para crear un nuevo componente. Tambien puede ejecutar: `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` para compilar la aplicacion en el directorio /dist
 
-## Running unit tests
+## Ejecutar Tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecutar: `ng test` tests unitarios via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Ejecutar end-to-end Tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ejecutar: `ng e2e` para ejecutar tests del tipo end-to-end en la plataforma que se elija. Previamente debe agregar el package que permita implementar e2e tests.
 
-## Further help
+## Ver comandos e instructivos sobre CLI
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Puede ejecutar `ng help` o visitar [la documentacion sobre CLI](https://angular.io/cli).
