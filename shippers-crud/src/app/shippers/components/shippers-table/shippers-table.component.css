@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+.mat-column-editShipper, .mat-column-editShipper {
+  padding-left: 5px;
+}
+
+.mat-column-deleteShipper {
+  width: fit-content;
+}

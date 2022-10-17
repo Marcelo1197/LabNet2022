@@ -1,0 +1,45 @@
+<div class="container-xl mt-5">
+  <lib-ng-toast></lib-ng-toast>
+  <div>
+    <button mat-raised-button color="primary" (click)="openAddDialog()">Nuevo</button>
+  </div>
+  <hr>
+  <div *ngIf="shippersList == null" class="alert alert-warning" role="alert">
+    No hay Shippers para mostrar o hay problemas en la base de datos.
+  </div>
+  <table *ngIf="shippersList" mat-table [dataSource]="shippersList">
+    <!-- ShipperId Column -->
+    <ng-container matColumnDef="ShipperID">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let shipper"> <span class="badge rounded-pill text-bg-primary">{{shipper.ShipperID}}</span> </td>
+    </ng-container>
+    <!-- CompanyName Column -->
+    <ng-container matColumnDef="CompanyName">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let shipper"> {{shipper.CompanyName}} </td>
+    </ng-container>
+    <!--- Phone Column -->
+    <ng-container matColumnDef="Phone">
+      <th mat-header-cell *matHeaderCellDef>Telefono</th>
+      <td mat-cell *matCellDef="let shipper"> {{shipper.Phone}} </td>
+    </ng-container>
+    <!-- Edit Button Column -->
+    <ng-container matColumnDef="editShipper">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let shipper">
+        <button mat-raised-button (click)="openEditDialog(shipper)">Editar</button>
+      </td>
+    </ng-container>
+    <!-- Delete Button Column -->
+    <ng-container matColumnDef="deleteShipper">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let shipper">
+        <button mat-raised-button color="warn" (click)="deleteShipper(shipper.ShipperID)">Eliminar</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>
+
