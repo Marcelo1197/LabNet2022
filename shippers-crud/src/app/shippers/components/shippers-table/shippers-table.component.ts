@@ -28,8 +28,7 @@ export class ShippersTableComponent implements OnInit {
     this.apiService.getShippers().subscribe({
       next: res => {
         this.shippersList = res;
-      },
-      error: err => this.alertServiceT.danger("Ups no hay conexión", "Hay problemas de conexión, lo sentimos.")
+      }
     });
   }
 

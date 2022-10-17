@@ -27,7 +27,11 @@ import { NgxAwesomePopupModule, ToastNotificationConfigModule } from '@costlydev
     MatSidenavModule,
     ShippersModule,
     NgxAwesomePopupModule.forRoot(),
-    ToastNotificationConfigModule.forRoot()
+    ToastNotificationConfigModule.forRoot({
+      toastCoreConfig: {
+        autoCloseDelay: 4500,
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
