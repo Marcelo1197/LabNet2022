@@ -1,0 +1,68 @@
+﻿@model  IEnumerable<Crud.NorthW.App.MVC.Models.ShippersView>
+@{
+    ViewBag.Title = "CRUD - Shippers";
+    ViewBag.ShipperAddedSuccessfully = (ViewBag.SuccessMessage != null) ? true : false;
+}
+
+<div class="container w-75 mt-3">
+    @if (ViewBag.SuccessMessage != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @ViewBag.SuccessMessage
+        </div>
+    }
+    @if (ViewBag.SuccessUpdatedMessage != null)
+    {
+        <div class="alert alert-primary" role="alert">
+            @ViewBag.SuccessUpdatedMessage
+        </div>
+    }
+    @if (ViewBag.SuccessDeletedMessage != null)
+    {
+        <div class="alert alert-warning" role="alert">
+            @ViewBag.SuccessDeletedMessage
+        </div>
+    }
+    @Html.Partial("_AddPartialView", new Crud.NorthW.App.MVC.Models.ShippersView())
+    <br />
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Telefono</th>
+                <th scope="col" ></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var shipperView in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @shipperView.ShipperID
+                    </th>
+                    <td>
+                        @shipperView.CompanyName
+                    </td>
+                    <td>
+                        @shipperView.Phone
+                    </td>
+                    <td>
+                        @if (shipperView != null)
+                        {
+                            @Html.Partial("_UpdatePartialView", shipperView);
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Eliminar", "Delete", new { id = shipperView.ShipperID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+
+
+            }
+        </tbody>
+    </table>
+</div>
+
+

@@ -1,0 +1,55 @@
+﻿@model List<Crud.NorthW.App.SWApi.MVC.Models.PeopleView>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container w-75 mt-3">
+    <section class="peopleListTitle">
+        <div>
+            <h3 class="text-white">Personajes de STAR WARS </h3>
+            <hr class="border border-warning border-2" />
+        </div>
+    </section>
+    <section class="peopleList row">
+        @foreach (var peopleView in Model)
+        {
+            <div class="card border-warning mb-3 mx-2" style="max-width: 14rem;">
+                <div class="card-header"><i class="fa-solid fa-book-journal-whills"></i><span class="ms-2">Info</span></div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">@peopleView.name</h5>
+                    <p class="card-text">
+                        <ul>
+                            <li>
+                                <strong>Altura:</strong> @peopleView.height
+                            </li>
+                            <li>
+                                <strong>Peso:</strong> @peopleView.mass
+                            </li>
+                            <li>
+                                <strong>Año Nacimiento:</strong> @peopleView.birth_year
+                            </li>
+                            <li>
+                                <strong>Genero:</strong> @peopleView.gender
+                            </li>
+                            <li>
+                                <strong>Planeta:</strong> @peopleView.homeworld
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        }
+    <div class="peopleList__Pagination">
+        @using (Html.BeginForm("PreviousPage", "People", FormMethod.Post, new { @class = "d-inline" }))
+        {
+            <input value=@ViewBag.NextPage name="PreviousPageUrl" hidden />
+            <button class = "btn btn-secondary mx-1">Anterior</button>
+        }
+        @using (@Html.BeginForm("NextPage", "People", FormMethod.Post, new { @class = "d-inline" }))
+        {
+            <input value=@ViewBag.NextPage name="nextPageUrl" hidden />
+            <button class = "btn btn-secondary mx-1">Siguiente</button>
+        }
+    </div>
+
+    </section>
+</div>
