@@ -1,0 +1,7 @@
+/* Modify pop-up alert height */
+.toast-right-top error {
+  height: 120px;
+}
+.toast-right-top[_ngcontent-mqm-c81] {
+  height: 120px;
+}

@@ -1,10 +1,9 @@
-import { ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Shippers } from 'src/app/models/shippers/shippers';
-import { DialogEditComponent } from 'src/app/shippers/templates/dialog-edit.component';
 import { ApiCrudService } from '../../services/api-crud.service';
-import { NgToastService } from 'ng-angular-popup';
 import { ShippersDialogComponent } from '../shippers-dialog/shippers-dialog.component';
+import { ToastEvokeService } from '@costlydeveloper/ngx-awesome-popup';
 
 @Component({
   selector: 'app-shippers-table',
@@ -17,8 +16,7 @@ export class ShippersTableComponent implements OnInit {
 
   constructor(
     private apiService: ApiCrudService,
-    private alertService: NgToastService,
-    private cdRef:ChangeDetectorRef,
+    private alertServiceT: ToastEvokeService,
     public dialog: MatDialog
   ) { }
 
@@ -30,9 +28,8 @@ export class ShippersTableComponent implements OnInit {
     this.apiService.getShippers().subscribe({
       next: res => {
         this.shippersList = res;
-        this.cdRef.detectChanges();
       },
-      error: err => console.log(err) //TODO: reemplazar cl
+      error: err => this.alertServiceT.danger("Ups no hay conexión", "Hay problemas de conexión, lo sentimos.")
     });
   }
 
@@ -58,19 +55,12 @@ export class ShippersTableComponent implements OnInit {
   deleteShipper(id: number) {
     this.apiService.deleteShipper(id).subscribe({
       next: () => {
-        this.alertService.info({
-          detail: "Shipper eliminado",
-          summary: `Se eliminó con éxito el Shipper ${id}`,
-          duration: 3000
-        });
+        this.alertServiceT.warning("Shipper eliminado", `Se eliminó con éxito el Shipper #${id}`);
         this.getShippers();
       },
       error: err => {
-        this.alertService.error({
-          detail: "Ups, hubo un error!",
-          summary: `${err.error.ErrorMessage}`, //TODO: mostrar en otra pagina el detalle del error
-          duration: 4500
-        });
+        let errorMessage = err.error.ErrorMessage ? err.error.ErrorMessage : "Hay problemas de conexión. Intenta más tarde.";
+        this.alertServiceT.danger("Ups, hubo un error!", errorMessage);
       }
     });
   }

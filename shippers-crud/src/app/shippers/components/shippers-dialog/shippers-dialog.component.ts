@@ -4,7 +4,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ShippersRequest } from 'src/app/models/shippers/shippersRequest';
 import { Shippers } from '../../../models/shippers/shippers';
 import { ApiCrudService } from '../../services/api-crud.service';
-import { NgToastService } from 'ng-angular-popup';
+import { ToastEvokeService } from '@costlydeveloper/ngx-awesome-popup';
 
 @Component({
   selector: 'app-shippers-dialog',
@@ -20,7 +20,7 @@ export class ShippersDialogComponent implements OnInit {
     private fb: FormBuilder,
     private apiService: ApiCrudService,
     private dialog: MatDialog,
-    private alertService: NgToastService,
+    private alertServiceT: ToastEvokeService,
   ){ }
 
   ngOnInit() {
@@ -29,12 +29,12 @@ export class ShippersDialogComponent implements OnInit {
     let phoneToEdit = isAddForm ? "" : this.dataInjected.ShippersModel.Phone;
 
     this.form = this.fb.group({
-      companyName: [(isAddForm ? null : companyNameToEdit), Validators.compose([ //FIX: (isAddForm ? null : companyNameToEdit)
+      companyName: [(isAddForm ? null : companyNameToEdit), Validators.compose([
         Validators.required,
         Validators.maxLength(40),
         Validators.pattern("^[\ a-zA-Z]+$"),
       ])],
-      phone: [(isAddForm ? null : phoneToEdit), Validators.compose([ //FIX: (isAddForm ? null : phoneToEdit)
+      phone: [(isAddForm ? null : phoneToEdit), Validators.compose([
         Validators.required,
         Validators.maxLength(24)
       ])],
@@ -49,17 +49,14 @@ export class ShippersDialogComponent implements OnInit {
     newShipper.Phone = phone;
     this.apiService.addShippers(newShipper).subscribe({
       next: (res) => {
-        this.alertService.success({
-          detail: "Shipper creado!",
-          summary: "Se creó el Shipper exitosamente"
-        });
+        this.alertServiceT.success("Shipper creado!", `Se creó el Shipper ${newShipper.CompanyName} exitosamente`);
         this.closeDialog();
       },
       error: err => {
-        this.alertService.error({
-          detail: "Ups hubo un problema!",
-          summary: `${err.error.ErrorMessage}`
-        });
+        this.alertServiceT.danger(
+          "Ups hubo un problema!",
+          `${err.error.ErrorMessage ? err.error.ErrorMessage : "Hay problemas de conexión. Intenta de nuevo más tarde."}`,
+        );
         this.closeDialog();
       },
     });
@@ -73,17 +70,12 @@ export class ShippersDialogComponent implements OnInit {
 
     this.apiService.updateShippers(shipperEdited).subscribe({
       next: () => {
-        this.alertService.success({
-          detail: "Shipper actualizado!",
-          summary: `Se actualizó el Shipper ${shipperEdited.ShipperID} con éxito!`
-        });
+        this.alertServiceT.success("Shipper actualizado!", `Se actualizó el Shipper ${shipperEdited.ShipperID} con éxito!`);
         this.closeDialog();
       },
       error: err => {
-        this.alertService.error({
-          detail: "Ups hubo un error!",
-          summary: "No pudimos actualizar el shipper :(" //TODO: mostrar en otra pagina el detalle del error
-        });
+        let errorMessage = err.error.ErrorMessage ? err.error.ErrorMessage : "Hay problemas de conexión, intenta más tarde."
+        this.alertServiceT.danger("Ups hubo un error!", errorMessage);
         this.closeDialog();
       }
     });

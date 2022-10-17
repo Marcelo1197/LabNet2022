@@ -132,7 +132,7 @@ namespace Crud.NorthW.App.WebAPI.Controllers
             }
             catch (DbUpdateException ex)
             {
-                var error = "No es posible eliminar este Shipper. Primero debe eliminar las órdenes relacionadas a el.";
+                var error = "Para eliminar este shipper debes eliminar sus órdenes primero.";
                 return Content(HttpStatusCode.Conflict, new { ErrorMessage = error });
             }
             catch (Exception ex)

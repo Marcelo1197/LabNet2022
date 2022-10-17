@@ -9,3 +9,8 @@ table {
 .mat-column-deleteShipper {
   width: fit-content;
 }
+
+/* Modify pop-up alert height */
+.toast-right-top {
+  height: 120px !important;
+}

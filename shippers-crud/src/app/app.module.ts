@@ -12,6 +12,8 @@ import { ShippersModule } from './shippers/shippers.module';
 import { NavbarComponent } from './templates/navbar/navbar.component';
 import { FooterComponent } from './templates/footer/footer.component';
 
+import { NgxAwesomePopupModule, ToastNotificationConfigModule } from '@costlydeveloper/ngx-awesome-popup';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import { FooterComponent } from './templates/footer/footer.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     ShippersModule,
+    NgxAwesomePopupModule.forRoot(),
+    ToastNotificationConfigModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
