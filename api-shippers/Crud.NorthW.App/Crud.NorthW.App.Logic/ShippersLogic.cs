@@ -41,15 +41,28 @@ namespace Crud.NorthW.App.Logic
 
         public void Update(Shippers shipper)
         {
-            var modifiedShipper = Get(shipper.ShipperID);
-            modifiedShipper.CompanyName = shipper.CompanyName;
-            modifiedShipper.Phone = shipper.Phone;
-            unitOfWork.Complete();
+            try
+            {
+                var modifiedShipper = Get(shipper.ShipperID);
+                modifiedShipper.CompanyName = shipper.CompanyName;
+                modifiedShipper.Phone = shipper.Phone;
+                unitOfWork.Complete();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message); //TODO: revisar
+            }
         }
 
         public void Delete(Shippers shipper)
         {
             unitOfWork.ShippersR.Delete(shipper);
+            unitOfWork.Complete();
+        }
+
+        public void RemoveOrderRelated(int idShipper)
+        {
+            unitOfWork.OrdersR.RemoveShipperRelated(idShipper);
             unitOfWork.Complete();
         }
     }

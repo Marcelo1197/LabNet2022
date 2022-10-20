@@ -3,14 +3,11 @@ using Crud.NorthW.App.Entities;
 using Crud.NorthW.App.Logic;
 using Crud.NorthW.App.WebAPI.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using System.Web.Mvc;
 
 namespace Crud.NorthW.App.WebAPI.Controllers
 {
@@ -85,7 +82,7 @@ namespace Crud.NorthW.App.WebAPI.Controllers
             }
         }
 
-        [System.Web.Http.HttpPut]
+        [System.Web.Http.HttpPut, EnableCors(origins: "*", headers: "*", methods: "*")]
         // PUT: api/Shippers
         public IHttpActionResult Edit([FromBody] ShippersRequest shipper)
         {
@@ -123,6 +120,7 @@ namespace Crud.NorthW.App.WebAPI.Controllers
                 {
                     throw new ShipperNotExistsException();
                 }
+                _logic.RemoveOrderRelated(id);
                 _logic.Delete(shipperDeleted);
                 return Content(HttpStatusCode.OK, shipperDeleted);
             }

@@ -16,11 +16,14 @@ namespace Crud.NorthW.App.Repository
 
         public ICustomerRepository CustomersR { get; private set; }
 
+        public IOrdersRepository OrdersR { get; private set; }
+
         public UnitOfWork(NorthwindContext context)
         {
             _context = context;
             ShippersR = new ShippersRepository(_context);
             CustomersR = new CustomerRepository(_context);
+            OrdersR = new OrdersRepository(_context);
         }
 
         public int Complete()
