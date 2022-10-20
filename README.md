@@ -10,7 +10,7 @@
 - La API Shippers lista para correr y ser utilizada por la app de Angular
 
 ### Ejecutar API Shippers
-- Configurar el [connectionString](https://github.com/Marcelo1197/LabNet2022/blob/c1469a0739af9e50d16d690897c87472157246bd/api-shippers/Crud.NorthW.App/Crud.NorthW.App.Data/App.config#L17) en el archivo de configuracion de la capa de datos. Se debe asignar a `data source=`el nombre de su conexión de SQL Server.
+- Configurar el [connectionString](https://github.com/Marcelo1197/LabNet2022/blob/c1469a0739af9e50d16d690897c87472157246bd/api-shippers/Crud.NorthW.App/Crud.NorthW.App.Data/App.config#L17) en el archivo de configuracion de la capa de datos. Se debe asignar a `data source=`el nombre de su conexión de SQL Server. También realizarlo en el archivo [Web.config](https://github.com/Marcelo1197/LabNet2022/blob/24613243d7e5101b37215f01d756df8b1c60be79/api-shippers/Crud.NorthW.App/Crud.NorthW.App.WebAPI/Web.config#L69) del proyecto WebAPI.
 - Click derecho sobre el proyecto **Crud.NorthW.App.WebAPI** y elegir **Set as Startup Project**
 - Correr el proyecto con F5 o clickeando el botón **IIS Express** en la Toolbar
 
