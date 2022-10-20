@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -11,7 +12,6 @@ namespace Crud.NorthW.App.WebAPI
         {
             // Enable Cors
             config.EnableCors();
-            // Web API configuration and services
 
             // Web API routes
             config.MapHttpAttributeRoutes();
@@ -21,6 +21,9 @@ namespace Crud.NorthW.App.WebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // ReferenceLoopHandling set to Ignore to avoid "self referencing loop detected" error
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
         }
     }
 }

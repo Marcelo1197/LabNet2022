@@ -96,7 +96,7 @@ namespace Crud.NorthW.App.WebAPI.Controllers
                 shipperUpdated.CompanyName = shipper.CompanyName;
                 shipperUpdated.Phone = shipper.Phone;
                 _logic.Update(shipperUpdated);
-                return Content(HttpStatusCode.OK, shipperUpdated);
+                return Content(HttpStatusCode.OK, new { successMessage = "Shipper actualizado exitosamente!" });
             }
             catch (ShipperNotExistsException ex)
             {
