@@ -74,8 +74,9 @@ export class ShippersDialogComponent implements OnInit {
         this.closeDialog();
       },
       error: err => {
-        let errorMessage = err.error.ErrorMessage ? err.error.ErrorMessage : "Hay problemas de conexión, intenta más tarde."
+        let errorMessage = err.error.ErrorMessage ? err.error.ErrorMessage : "Hay problemas de conexión, intenta más tarde.";
         this.alertServiceT.danger("Ups hubo un error!", errorMessage);
+        console.log(err); //TODO eliminar
         this.closeDialog();
       }
     });

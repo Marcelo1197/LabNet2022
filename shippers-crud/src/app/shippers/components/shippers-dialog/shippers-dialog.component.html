@@ -1,8 +1,8 @@
-<h1 mat-dialog-title>{{dataInjected.isAddDialog ? "Nuevo" : "Editar"}}</h1>
+<h1 mat-dialog-title>{{dataInjected.isAddDialog ? "Agregar Shipper" : "Editar Shipper"}}</h1>
 <div mat-dialog-content>
 </div>
 <mat-card>
-  <form [formGroup]="form" (ngSubmit)="(dataInjected.isAddDialog) ? addShipper() : editShipper(dataInjected.ShippersModel.ShipperID)">
+  <form [formGroup]="form" (ngSubmit)="(dataInjected.isAddDialog) ? addShipper() : editShipper(dataInjected.ShippersModel.ShipperID)" id="formShipper">
   <mat-card-header>
     <mat-card-title>{{dataInjected.isAddDialog ? "Nuevo Shipper" : "Editar Shipper"}}</mat-card-title>
   </mat-card-header>

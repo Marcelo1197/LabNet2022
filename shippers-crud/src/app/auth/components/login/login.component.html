@@ -1,0 +1,29 @@
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <mat-form-field appearance="fill">
+      <mat-label>Usuario</mat-label>
+      <input matInput formControlName="username">
+      <mat-error *ngIf="this.form.controls['username'].hasError('required')">
+        Debe ingresar un usuario
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input matInput formControlName="password" type="password">
+      <mat-error *ngIf="this.form.controls['password'].hasError('required')">
+        Debe ingresar una contraseña
+      </mat-error>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+    <button mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
+  </form>
+  <button mat-button color="primary" (click)="loginWithGoogleAuth()">Login Google</button>
+  <div>
+    <a [routerLink]="['/forgot-password']" routerLinkActive="router-link-active">Olvidaste tu contraseña?</a>
+  </div>
+  <div>
+    <a [routerLink]="['/sign-up']" routerLinkActive="router-link-active" >Registrate</a>
+  </div>
+</mat-card>

@@ -9,10 +9,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { ShippersModule } from './shippers/shippers.module';
 
+
 import { NavbarComponent } from './templates/navbar/navbar.component';
 import { FooterComponent } from './templates/footer/footer.component';
 
 import { NgxAwesomePopupModule, ToastNotificationConfigModule } from '@costlydeveloper/ngx-awesome-popup';
+import { AuthModule } from './auth/auth.module';
+import { AuthService } from './auth/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { NgxAwesomePopupModule, ToastNotificationConfigModule } from '@costlydev
     BrowserAnimationsModule,
     MatSidenavModule,
     ShippersModule,
+    AuthModule,
     NgxAwesomePopupModule.forRoot(),
     ToastNotificationConfigModule.forRoot({
       toastCoreConfig: {
@@ -33,7 +37,7 @@ import { NgxAwesomePopupModule, ToastNotificationConfigModule } from '@costlydev
       }
     })
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

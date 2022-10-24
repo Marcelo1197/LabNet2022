@@ -33,6 +33,4 @@ export class ApiCrudService {
   deleteShipper(id: number):  Observable<any> { //TODO: cambiar generics any
     return this.http.delete(`${environment.apiNorthwind}/${this.endpoint}/${id}`);
   }
-
-
 }
