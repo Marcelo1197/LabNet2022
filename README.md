@@ -23,3 +23,10 @@
 - [Angular Material](https://material.angular.io/guide/getting-started)
 - [Bootstrap](https://getbootstrap.com/)
 - [Ngx Awesome Popup](https://costlydeveloper.github.io/ngx-awesome-popup/#/)
+
+### Demo
+
+
+
+https://user-images.githubusercontent.com/42044480/198510814-af928d2f-ebf2-4dfd-b8ed-c56eb79a31aa.mp4
+
